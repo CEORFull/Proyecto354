@@ -33,6 +33,7 @@ modas = df[['Attrition',
           'WorkLifeBalance']].mode()
 
 df.loc[pd.isna(df["Attrition"]),'Attrition']=modas['Attrition']
+df.loc[df["Attrition"]=='Termination','Attrition']='Voluntary Resignation' 
 df.loc[pd.isna(df["BusinessTravel"]),'BusinessTravel']=modas['BusinessTravel']
 df.loc[pd.isna(df["Department"]),'Department']=modas['Department']
 df.loc[pd.isna(df["Education"]),'Education']=modas['Education']
